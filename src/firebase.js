@@ -1,22 +1,18 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
-// 1. Importamos el servicio de Firestore (Base de datos)
 import { getFirestore } from "firebase/firestore";
 
+// 🔧 REEMPLAZÁ CON TU CONFIGURACIÓN DE FIREBASE
 const firebaseConfig = {
-  apiKey: "AIzaSyBn4C16FGOH9IuyNxX6F-LJJXBbowc1z_Q",
-  authDomain: "estudiar-941c4.firebaseapp.com",
-  projectId: "estudiar-941c4",
-  storageBucket: "estudiar-941c4.firebasestorage.app",
-  messagingSenderId: "280190420704",
-  appId: "1:280190420704:web:6eea0baf52daedd22fb285"
+  apiKey: "TU_API_KEY",
+  authDomain: "TU_PROJECT.firebaseapp.com",
+  projectId: "TU_PROJECT_ID",
+  storageBucket: "TU_PROJECT.firebasestorage.app",
+  messagingSenderId: "TU_SENDER_ID",
+  appId: "TU_APP_ID",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// 2. EXPORTAMOS todo lo que tus Hooks necesitan
 export const auth = getAuth(app);
-export const googleProvider = new GoogleAuthProvider();
-// ESTO ES LO QUE TE FALTA AHORA:
 export const db = getFirestore(app);
+export const googleProvider = new GoogleAuthProvider();
