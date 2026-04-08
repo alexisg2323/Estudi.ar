@@ -1,9 +1,8 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+// 1. Importamos el servicio de Firestore (Base de datos)
+import { getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBn4C16FGOH9IuyNxX6F-LJJXBbowc1z_Q",
   authDomain: "estudiar-941c4.firebaseapp.com",
@@ -15,3 +14,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// 2. EXPORTAMOS todo lo que tus Hooks necesitan
+export const auth = getAuth(app);
+export const googleProvider = new GoogleAuthProvider();
+// ESTO ES LO QUE TE FALTA AHORA:
+export const db = getFirestore(app);
